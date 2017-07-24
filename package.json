@@ -8,7 +8,7 @@
     "atom-workspace": "exfmt-atom:format"
   },
   "activationHooks": ["language-elixir:grammar-used"],
-  "repository": "https://github.com/atom/exfmt-atom",
+  "repository": "https://github.com/rgreenjr/exfmt-atom",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
