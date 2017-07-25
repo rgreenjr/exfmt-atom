@@ -1,5 +1,5 @@
 {
-  "atom-workspace": {
-    "ctrl-alt-o": "exfmt-atom:format"
+  "atom-text-editor": {
+    "ctrl-alt-f": "exfmt-atom:format"
   }
 }
