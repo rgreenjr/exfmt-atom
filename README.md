@@ -15,13 +15,13 @@ end
 
 Fetch and install dependencies:
 
-```
+```sh
 mix deps.get
 ```
 
 Install `exfmt-atom`:
 
-```
+```sh
 apm install exfmt-atom
 ```
 
