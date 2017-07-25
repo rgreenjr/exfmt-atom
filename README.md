@@ -27,7 +27,7 @@ apm install exfmt-atom
 
 ## Usage
 
-To format a file, use the keyboard shortcut `Ctrl + Alt + F`, or go to
+To format a file, use the keyboard shortcut `CTRL + ALT + F`, or go to
 **Packages → Elixir Formatter → Format File**.
 
 ## Known Issues
@@ -36,4 +36,4 @@ To format a file, use the keyboard shortcut `Ctrl + Alt + F`, or go to
 
 ## Maintainers
 
-[Ron Green][rgreenjr]
+[Ron Green](https://github.com/rgreenjr)
