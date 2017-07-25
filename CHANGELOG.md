@@ -1,3 +1,7 @@
+## 0.3.1 - 2017-07-25
+
+- Replace use of "Elixir Formatter" with "Exfmt-Atom" for consistency
+
 ## 0.3.0 - 2017-07-24
 
 - Change text event handling function name
