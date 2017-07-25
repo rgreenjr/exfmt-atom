@@ -1,3 +1,7 @@
+## 0.3.0 - 2017-07-24
+
+- Change text event handling function name
+
 ## 0.2.0 - 2017-07-24
 
 - Add usage instructions to README
