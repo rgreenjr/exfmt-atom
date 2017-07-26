@@ -1,3 +1,7 @@
+## 0.3.2 - 2017-07-26
+
+- Change formatOnSave default to false while exfmt is in alpha
+
 ## 0.3.1 - 2017-07-25
 
 - Replace use of "Elixir Formatter" with "Exfmt-Atom" for consistency
