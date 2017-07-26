@@ -1,7 +1,7 @@
 {
   "name": "exfmt-atom",
   "main": "./lib/exfmt-atom",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Atom package to format Elixir code using the exfmt formatter.",
   "keywords": [
     "elixir",
