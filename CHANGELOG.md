@@ -1,3 +1,8 @@
+## 0.4.1 - 2017-07-31
+
+- Change externalExfmtDirectory setting to exfmtDirectory
+- Have exfmtDirectory setting default to "."
+
 ## 0.4.0 - 2017-07-31
 
 - Support formatting the current text selection
