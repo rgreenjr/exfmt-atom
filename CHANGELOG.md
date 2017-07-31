@@ -1,3 +1,9 @@
+## 0.4.0 - 2017-07-31
+
+- Support formatting the current text selection
+- Capitalize settings titles
+- Add spec tests for package activation and default settings
+
 ## 0.3.2 - 2017-07-26
 
 - Change formatOnSave default to false while exfmt is in alpha
