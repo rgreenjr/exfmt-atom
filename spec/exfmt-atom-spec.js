@@ -43,7 +43,7 @@ describe("ExfmtAtom", () => {
       expect(atom.config.get("exfmt-atom.showErrorNotifications")).toBe(true);
     });
 
-    it("should default exfmtDirectory to blank string", () => {
+    it("should default exfmtDirectory to current directory", () => {
       expect(atom.config.get("exfmt-atom.exfmtDirectory")).toEqual(".");
     });
   });
