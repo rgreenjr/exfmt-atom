@@ -1,13 +1,19 @@
 {
   "name": "exfmt-atom",
   "main": "./lib/main",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Atom package to format Elixir code using the exfmt formatter.",
-  "keywords": ["elixir", "formatter", "exfmt"],
+  "keywords": [
+    "elixir",
+    "formatter",
+    "exfmt"
+  ],
   "activationCommands": {
     "atom-workspace": "exfmt-atom:format"
   },
-  "activationHooks": ["language-elixir:grammar-used"],
+  "activationHooks": [
+    "language-elixir:grammar-used"
+  ],
   "repository": "https://github.com/rgreenjr/exfmt-atom",
   "license": "MIT",
   "engines": {
