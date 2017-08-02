@@ -1,3 +1,8 @@
+## 0.4.2 - 2017-08-02
+
+- Add formatting spec tests
+- Refactor code into separate modules
+
 ## 0.4.1 - 2017-07-31
 
 - Change externalExfmtDirectory setting to exfmtDirectory
