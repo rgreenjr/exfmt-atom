@@ -6,7 +6,6 @@ export default {
 
     expect(notifications.length).toBe(1);
     notification = notifications[0];
-
     expect(notification.getMessage()).toEqual(message);
 
     if (options.type) {
