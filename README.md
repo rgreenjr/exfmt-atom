@@ -1,7 +1,8 @@
 # exfmt-atom package
 
-An Atom package to format Elixir source code using the
-[exfmt](https://github.com/lpil/exfmt) formatter.
+[![Build Status](https://travis-ci.org/rgreenjr/exfmt-atom.svg?branch=master)](https://travis-ci.org/rgreenjr/exfmt-atom) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+
+An Atom package to format Elixir source code using the [exfmt](https://github.com/lpil/exfmt) formatter.
 
 ## Installation
 
