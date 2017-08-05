@@ -4,6 +4,8 @@
 
 An Atom package to format Elixir source code using the [exfmt](https://github.com/lpil/exfmt) formatter.
 
+![demo](demo.gif)
+
 ## Installation
 
 Add `exfmt` to your `mix.exs` dependencies:
