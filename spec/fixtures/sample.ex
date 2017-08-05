@@ -1,24 +1,5 @@
-defmodule   App     do
-  @big_number 12344567
-  @short_list = [
-    :alpha,         :beta ]
-  @long_list = [
-:alpha	,
-:beta	,
-:gamma	,
-:delta	,
-:eta	,
-:theta	,
-:iota	,
-:kappa	,
-:lambda,
-:nu,
-:xi,
-:omnicron,
-:pi,
-:rho,
-:sigma
-]
+defmodule App do
+  @very_long = %{ foo: "bar", baz: "1", bar: "bar", quux: "bar", banana: "bar", apple: "bar", ananas: "bar", morestuff: "bar", katonka: "bar" }
 
   def one() do
   Enum.map [
