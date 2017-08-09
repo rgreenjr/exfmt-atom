@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.4.4 - 2017-08-08
+
+- Use delimiter to separate formatter output from compiler output
+
 ## 0.4.3 - 2017-08-05
 
 - Include exception stack traces in error notifications
