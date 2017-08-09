@@ -91,4 +91,32 @@ describe("Formatter", () => {
       );
     });
   });
+
+  describe("prependDelimiter", () => {
+    it("prepends delimiter to text", () => {
+      expect(formatter.prependDelimiter("hello")).toEqual(
+        formatter.getDelimiter() + "hello"
+      );
+    });
+  });
+
+  describe("stripDelimiter", () => {
+    it("strips delimiter and anything preceeding it", () => {
+      expect(
+        formatter.stripDelimiter(formatter.getDelimiter() + "hello")
+      ).toEqual("hello");
+
+      expect(
+        formatter.stripDelimiter(
+          "no trailing newline" + formatter.getDelimiter() + "hello"
+        )
+      ).toEqual("hello");
+
+      expect(
+        formatter.stripDelimiter(
+          "Compiling 5 files (.ex)\n" + formatter.getDelimiter() + "hello"
+        )
+      ).toEqual("hello");
+    });
+  });
 });
