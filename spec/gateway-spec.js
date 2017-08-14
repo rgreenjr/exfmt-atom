@@ -1,11 +1,41 @@
 "use babel";
 
 import gateway from "../lib/gateway";
+import path from "path";
+import process from "child_process";
 
 describe("Gateway", () => {
   describe("packagePath", () => {
     it("returns path of package installation", () => {
       expect(gateway.packagePath()).toContain("exfmt-atom");
+    });
+  });
+
+  describe("runExfmt", () => {
+    beforeEach(function() {
+      spyOn(process, "spawnSync").andReturn({});
+    });
+
+    it("invokes runLocalExfmt when exfmtDirectory is undefined", () => {
+      atom.config.set("exfmt-atom.exfmtDirectory", undefined);
+      gateway.runExfmt("input text");
+      expect(process.spawnSync).toHaveBeenCalledWith(
+        "mix",
+        ["exfmt", "--stdin"],
+        {
+          cwd: [atom.project.getPaths()[0]],
+          input: "input text"
+        }
+      );
+    });
+
+    it("invokes runExternalExfmt when exfmtDirectory is set", () => {
+      atom.config.set("exfmt-atom.exfmtDirectory", "/tmp");
+      gateway.runExfmt("input text");
+      expect(process.spawnSync).toHaveBeenCalledWith("bin/exfmt.sh", ["/tmp"], {
+        cwd: path.join(__dirname, ".."),
+        input: "input text"
+      });
     });
   });
 
