@@ -11,6 +11,6 @@ defmodule App do
 
   # function two comment
   def two(some_string) do
-  some_string |> String.downcase() |> String.strip()
+  some_string |> String.downcase |> String.strip
   end
 end
