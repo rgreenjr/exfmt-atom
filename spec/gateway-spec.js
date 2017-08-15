@@ -39,6 +39,13 @@ describe("Gateway", () => {
     });
   });
 
+  describe("exfmtDirectory", () => {
+    it("defaults to current directory when undefined", () => {
+      atom.config.set("exfmt-atom.exfmtDirectory", undefined);
+      expect(gateway.exfmtDirectory()).toEqual(".");
+    });
+  });
+
   describe("shouldUseLocalExfmt", () => {
     it("returns true when exfmtDirectory is blank or '.'", () => {
       atom.config.set("exfmt-atom.exfmtDirectory", "");
