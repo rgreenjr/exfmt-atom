@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.4.5 - 2017-08-16
+
+- Remove bash script previously used to run external mix processes
+- Default exfmtDirectory setting to current project path when undefined
+
 ## 0.4.4 - 2017-08-08
 
 - Use delimiter to separate formatter output from compiler output
