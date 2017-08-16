@@ -2,8 +2,9 @@
 
 import * as path from "path";
 import formatter from "../lib/formatter";
-import gateway from "../lib/gateway";
 import helper from "./helper";
+import main from "../lib/main";
+import process from "child_process";
 
 const validFile = path.join(__dirname, "fixtures", "valid.ex");
 
@@ -22,7 +23,7 @@ describe("Formatter", () => {
 
   describe("formatTextEditor", () => {
     it("replaces all text with stdout when text selection is empty", () => {
-      spyOn(gateway, "runExfmt").andReturn({
+      spyOn(formatter, "runExfmt").andReturn({
         status: 0,
         stdout: "replacement text",
         stderr: null
@@ -36,7 +37,7 @@ describe("Formatter", () => {
     });
 
     it("replaces selected text range with stdout", () => {
-      spyOn(gateway, "runExfmt").andReturn({
+      spyOn(formatter, "runExfmt").andReturn({
         status: 0,
         stdout: "REPLACEMENT\n",
         stderr: null
@@ -51,7 +52,7 @@ describe("Formatter", () => {
     });
 
     it("displays error notification when status is nonzero", () => {
-      spyOn(gateway, "runExfmt").andReturn({
+      spyOn(formatter, "runExfmt").andReturn({
         status: 1,
         stdout: null,
         stderr: "stderr msg"
@@ -65,7 +66,7 @@ describe("Formatter", () => {
     });
 
     it("displays error notification when exception is thrown", () => {
-      spyOn(gateway, "runExfmt").andThrow("exception msg");
+      spyOn(formatter, "runExfmt").andThrow("exception msg");
       formatter.formatTextEditor(atom.workspace.getActiveTextEditor());
       helper.verifyNotification("Exfmt-Atom Exception", {
         type: "error",
@@ -117,6 +118,40 @@ describe("Formatter", () => {
           "Compiling 5 files (.ex)\n" + formatter.getDelimiter() + "hello"
         )
       ).toEqual("hello");
+    });
+  });
+
+  describe("runExfmt", () => {
+    beforeEach(function() {
+      spyOn(process, "spawnSync").andReturn({});
+    });
+
+    it("uses project path when exfmtDirectory setting undefined", () => {
+      atom.config.set("exfmt-atom.exfmtDirectory", undefined);
+
+      formatter.runExfmt("input text");
+      expect(process.spawnSync).toHaveBeenCalledWith(
+        "mix",
+        ["exfmt", "--stdin"],
+        {
+          cwd: main.projectPath(),
+          input: "input text"
+        }
+      );
+    });
+
+    it("uses exfmtDirectory setting when defined", () => {
+      atom.config.set("exfmt-atom.exfmtDirectory", "/tmp");
+
+      formatter.runExfmt("input text");
+      expect(process.spawnSync).toHaveBeenCalledWith(
+        "mix",
+        ["exfmt", "--stdin"],
+        {
+          cwd: "/tmp",
+          input: "input text"
+        }
+      );
     });
   });
 });

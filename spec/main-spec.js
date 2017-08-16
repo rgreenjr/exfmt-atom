@@ -1,6 +1,7 @@
 "use babel";
 
 import * as path from "path";
+import main from "../lib/main";
 
 const validFile = path.join(__dirname, "fixtures", "valid.ex");
 
@@ -41,6 +42,13 @@ describe("Main", () => {
 
     it("should default exfmtDirectory to current directory", () => {
       expect(atom.config.get("exfmt-atom.exfmtDirectory")).toEqual(".");
+    });
+  });
+
+  describe("exfmtDirectory", () => {
+    it("defaults to current directory when undefined", () => {
+      atom.config.set("exfmt-atom.exfmtDirectory", undefined);
+      expect(main.exfmtDirectory()).toEqual(atom.project.getPaths()[0]);
     });
   });
 });
