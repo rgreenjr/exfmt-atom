@@ -36,7 +36,7 @@ describe("Formatter", () => {
       expect(atom.notifications.getNotifications().length).toBe(0);
     });
 
-    it("replaces selected text range with stdout", () => {
+    it("replaces selected text with stdout when text selection exists", () => {
       spyOn(formatter, "runExfmt").andReturn({
         status: 0,
         stdout: "REPLACEMENT\n",
